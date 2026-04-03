@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Build Frontend
+        run: npm run build
+
+      - name: Install macOS DMG Dependencies
+        if: matrix.os == 'macos-latest'
+        run: brew install gettext
+        
+      - name: Build Electron (Mac)
+        if: matrix.os == 'macos-latest'
+        run: |
+          export DYLD_LIBRARY_PATH="$(brew --prefix gettext)/lib:$DYLD_LIBRARY_PATH"
+          export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix gettext)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+          npx electron-builder --mac --publish never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Build Electron (Windows)
+        if: matrix.os == 'windows-latest'
+        run: npx electron-builder --win --publish never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.os }}-build
+          path: |
+            dist_electron/*.dmg
+            dist_electron/*.exe

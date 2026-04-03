@@ -1,0 +1,16 @@
+{
+  "name": "ngo-planner-bridge",
+  "version": "0.1.0",
+  "description": "NGO Planner Bridge tools for OpenClaw",
+  "type": "module",
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48"
+  },
+  "openclaw": {
+    "extensions": ["./index.js"],
+    "install": {
+      "localPath": "electron/openclaw-extensions/ngo-planner-bridge",
+      "defaultChoice": "local"
+    }
+  }
+}

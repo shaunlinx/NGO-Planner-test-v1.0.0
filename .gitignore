@@ -1,0 +1,56 @@
+# Logs
+logs
+backups
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Electron build output
+dist_electron
+release
+build
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Large model files
+resources/models
+models/
+
+# IDE specific
+.trae/
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Mock data
+mock_userdata/
+
+# RAG Storage
+rag_storage/
+
+# Local binary artifacts
+/eng.traineddata

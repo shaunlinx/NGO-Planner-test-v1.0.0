@@ -1,0 +1,13 @@
+{
+  "id": "ngo-planner-bridge",
+  "skills": [
+    "ngo_planner",
+    "ngo_planner_capabilities"
+  ],
+  "channels": [],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

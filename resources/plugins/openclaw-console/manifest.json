@@ -1,0 +1,12 @@
+{
+  "id": "ngo.openclaw.console",
+  "name": "OpenClaw 控制台",
+  "version": "0.1.2",
+  "description": "在 NGO Planner 内管理 OpenClaw（状态/日志/健康检查）",
+  "main": "index.js",
+  "ui": {
+    "entry": "ui/index.html",
+    "title": "OpenClaw 控制台",
+    "permissions": ["openclaw.manage"]
+  }
+}

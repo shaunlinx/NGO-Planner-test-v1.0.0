@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-05T19:20:01.511Z",
+  "policyName": "dangerous-capability-whitelist-template",
+  "mode": {
+    "denyByDefault": true,
+    "requireApprovalForUnknown": true
+  },
+  "allowList": [],
+  "recommendedReviewList": [
+    "project_intel_run",
+    "project_intel_items_update",
+    "project_intel_export",
+    "project_intel_delete",
+    "social_draft_save",
+    "kb_query",
+    "kb_mount_add",
+    "kb_mount_remove",
+    "artifacts_write",
+    "fs_read",
+    "fs_write",
+    "net_fetch",
+    "team_upsert",
+    "team_delete",
+    "org_set",
+    "selection_set",
+    "settings_set",
+    "leads_upsert",
+    "leads_delete",
+    "schedules_upsert",
+    "schedules_delete",
+    "projects_patch",
+    "projects_delete",
+    "milestones_update",
+    "events_upsert",
+    "events_delete"
+  ],
+  "notes": [
+    "只把业务必须的高风险能力加入 allowList",
+    "新增能力默认不放行，先走审批",
+    "定期复核 allowList，删除不再需要的高风险项"
+  ]
+}

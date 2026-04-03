@@ -1,0 +1,920 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Process:               Electron [38980]
+Path:                  /Users/USER/Downloads/*/Electron.app/Contents/MacOS/Electron
+Identifier:            com.github.Electron
+Version:               28.3.3 (28.3.3)
+Code Type:             X86-64 (Native)
+Parent Process:        node [38979]
+Responsible:           Electron [24653]
+User ID:               501
+
+Date/Time:             2026-01-26 19:02:22.6546 +0800
+OS Version:            macOS 12.6 (21G115)
+Report Version:        12
+Anonymous UUID:        E2C920A9-C62D-4587-FB15-EF40F1092277
+
+Sleep/Wake UUID:       7D84B849-0D3D-48CD-901F-9A2C2D4898D0
+
+Time Awake Since Boot: 510000 seconds
+Time Since Wake:       20579 seconds
+
+System Integrity Protection: enabled
+
+Crashed Thread:        35
+
+Exception Type:        EXC_BREAKPOINT (SIGTRAP)
+Exception Codes:       0x0000000000000002, 0x0000000000000000
+Exception Note:        EXC_CORPSE_NOTIFY
+
+Termination Reason:    Namespace SIGNAL, Code 5 Trace/BPT trap: 5
+Terminating Process:   exc handler [38980]
+
+Thread 0:: CrBrowserMain Dispatch queue: com.apple.main-thread
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   HIToolbox                     	    0x7ff8279a65e6 RunCurrentEventLoopInMode + 292
+6   HIToolbox                     	    0x7ff8279a634a ReceiveNextEventCommon + 594
+7   HIToolbox                     	    0x7ff8279a60e5 _BlockUntilNextEventMatchingListInModeWithFilter + 70
+8   AppKit                        	    0x7ff821730fad _DPSNextEvent + 927
+9   AppKit                        	    0x7ff82172f66a -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1394
+10  AppKit                        	    0x7ff821721d19 -[NSApplication run] + 586
+11  Electron Framework            	       0x10ff90766 node::AsyncResource::get_async_id() const + 10545558
+12  Electron Framework            	       0x10ff8e244 node::AsyncResource::get_async_id() const + 10536052
+13  Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+14  Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+15  Electron Framework            	       0x10ee37105 node::GetArrayBufferAllocator(node::IsolateData*) + 2556037
+16  Electron Framework            	       0x10ee38c32 node::GetArrayBufferAllocator(node::IsolateData*) + 2562994
+17  Electron Framework            	       0x10ee3464f node::GetArrayBufferAllocator(node::IsolateData*) + 2545103
+18  Electron Framework            	       0x10c7b43f2 v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*) + 16754
+19  Electron Framework            	       0x10c7b5687 v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*) + 21511
+20  Electron Framework            	       0x10c7b5475 v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*) + 20981
+21  Electron Framework            	       0x10c7b3caa v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*) + 14890
+22  Electron Framework            	       0x10c7b3db8 v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*) + 15160
+23  Electron Framework            	       0x10c4119fb ElectronMain + 155
+24  dyld                          	       0x10bf6552e start + 462
+
+Thread 1:: ThreadPoolServiceThread
+0   libsystem_kernel.dylib        	    0x7ff81ebfe8ca kevent64 + 10
+1   Electron Framework            	       0x10ff9a837 node::AsyncResource::get_async_id() const + 10586727
+2   Electron Framework            	       0x10ff99dd5 node::AsyncResource::get_async_id() const + 10584069
+3   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+4   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+5   Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+6   Electron Framework            	       0x10ff4b28d node::AsyncResource::get_async_id() const + 10261693
+7   Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+8   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 2:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+6   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 3:: ThreadPoolBackgroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d05d node::AsyncResource::get_async_id() const + 10334861
+6   Electron Framework            	       0x10ff5d00a node::AsyncResource::get_async_id() const + 10334778
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 4:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+6   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 5:: Chrome_IOThread
+0   libsystem_kernel.dylib        	    0x7ff81ebfe8ca kevent64 + 10
+1   Electron Framework            	       0x10ff9a837 node::AsyncResource::get_async_id() const + 10586727
+2   Electron Framework            	       0x10ff99dd5 node::AsyncResource::get_async_id() const + 10584069
+3   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+4   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+5   Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+6   Electron Framework            	       0x10ee399ff node::GetArrayBufferAllocator(node::IsolateData*) + 2566527
+7   Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+8   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 6:: MemoryInfra
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b4d2 node::AsyncResource::get_async_id() const + 10065666
+4   Electron Framework            	       0x10fed7b9b node::AsyncResource::get_async_id() const + 9788875
+5   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+6   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+7   Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+8   Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+9   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+10  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 7:
+0   libsystem_kernel.dylib        	    0x7ff81ebfa34e kevent + 10
+1   Electron Framework            	       0x10c411430 uv_free_interface_addresses + 2624
+2   Electron Framework            	       0x10c3ff327 uv_run + 519
+3   Electron Framework            	       0x113df170a node::OnFatalError(char const*, char const*) + 527770
+4   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+5   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 8:
+0   Electron Framework            	       0x10e569a3e v8::internal::compiler::GraphReducer::ReduceNode(v8::internal::compiler::Node*) + 1006
+1   Electron Framework            	       0x10e6a6571 v8::internal::compiler::Pipeline::AllocateRegistersForTesting(v8::internal::RegisterConfiguration const*, v8::internal::compiler::InstructionSequence*, bool, bool) + 24065
+2   Electron Framework            	       0x10e697469 v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*) + 18153
+3   Electron Framework            	       0x10e6949c6 v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*) + 7238
+4   Electron Framework            	       0x10e69468b v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*) + 6411
+5   Electron Framework            	       0x10da53c77 v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*) + 55
+6   Electron Framework            	       0x10da95ce7 v8::internal::OptimizingCompileDispatcher::CompileNext(v8::internal::TurbofanCompilationJob*, v8::internal::LocalIsolate*) + 39
+7   Electron Framework            	       0x10da974b4 v8::internal::OptimizingCompileDispatcher::OptimizingCompileDispatcher(v8::internal::Isolate*) + 3204
+8   Electron Framework            	       0x113dee836 node::OnFatalError(char const*, char const*) + 515782
+9   Electron Framework            	       0x113def134 node::OnFatalError(char const*, char const*) + 518084
+10  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 9:
+0   Electron Framework            	       0x10e117c59 v8::internal::maglev::MaglevConcurrentDispatcher::Flush(v8::internal::BlockingBehavior) + 133577
+1   Electron Framework            	       0x10e0c13da v8::internal::Zone::ReleaseSegment(v8::internal::Segment*) + 222442
+2   Electron Framework            	       0x10e0bc10a v8::internal::Zone::ReleaseSegment(v8::internal::Segment*) + 201242
+3   Electron Framework            	       0x10e0bb60f v8::internal::Zone::ReleaseSegment(v8::internal::Segment*) + 198431
+4   Electron Framework            	       0x10e0f604b v8::internal::compiler::JSHeapBroker::DetachLocalIsolateForMaglev(v8::internal::maglev::MaglevCompilationInfo*) + 891
+5   Electron Framework            	       0x10da53c77 v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*) + 55
+6   Electron Framework            	       0x10e0f7727 v8::internal::maglev::MaglevConcurrentDispatcher::Flush(v8::internal::BlockingBehavior) + 1175
+7   Electron Framework            	       0x113dee836 node::OnFatalError(char const*, char const*) + 515782
+8   Electron Framework            	       0x113def134 node::OnFatalError(char const*, char const*) + 518084
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 10:
+0   libsystem_kernel.dylib        	    0x7ff81ebf70ea __ulock_wait + 10
+1   libsystem_platform.dylib      	    0x7ff81ec4627e _os_unfair_lock_lock_slow + 155
+2   Electron Framework            	       0x10c6734d1 v8::internal::GetCurrentStackPosition() + 37969
+3   Electron Framework            	       0x10e08abb0 v8::internal::Zone::~Zone() + 96
+4   Electron Framework            	       0x10e7477e1 v8::internal::compiler::ZoneStats::ReturnZone(v8::internal::Zone*) + 225
+5   Electron Framework            	       0x10e6956b6 v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*) + 10550
+6   Electron Framework            	       0x10e69469e v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*) + 6430
+7   Electron Framework            	       0x10da53c77 v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*) + 55
+8   Electron Framework            	       0x10da95ce7 v8::internal::OptimizingCompileDispatcher::CompileNext(v8::internal::TurbofanCompilationJob*, v8::internal::LocalIsolate*) + 39
+9   Electron Framework            	       0x10da974b4 v8::internal::OptimizingCompileDispatcher::OptimizingCompileDispatcher(v8::internal::Isolate*) + 3204
+10  Electron Framework            	       0x113dee836 node::OnFatalError(char const*, char const*) + 515782
+11  Electron Framework            	       0x113def134 node::OnFatalError(char const*, char const*) + 518084
+12  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+13  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 11:
+0   libsystem_kernel.dylib        	    0x7ff81ebf59b6 semaphore_wait_trap + 10
+1   Electron Framework            	       0x10c40bfc0 uv_sem_wait + 16
+2   Electron Framework            	       0x113e9a2cc node::SetTracingController(v8::TracingController*) + 95676
+3   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+4   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 12:
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   Electron Framework            	       0x10c40b9b9 uv_cond_wait + 9
+3   Electron Framework            	       0x10c3fb14c uv_cancel + 716
+4   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+5   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 13:
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   Electron Framework            	       0x10c40b9b9 uv_cond_wait + 9
+3   Electron Framework            	       0x10c3fb14c uv_cancel + 716
+4   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+5   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 14:
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   Electron Framework            	       0x10c40b9b9 uv_cond_wait + 9
+3   Electron Framework            	       0x10c3fb14c uv_cancel + 716
+4   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+5   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 15:
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   Electron Framework            	       0x10c40b9b9 uv_cond_wait + 9
+3   Electron Framework            	       0x10c3fb14c uv_cancel + 716
+4   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+5   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 16:: tokio-runtime-worker
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   lancedb.darwin-x64.node       	       0x16457c6ce 0x15fada000 + 78259918
+3   lancedb.darwin-x64.node       	       0x164584bda 0x15fada000 + 78293978
+4   lancedb.darwin-x64.node       	       0x16456b40b 0x15fada000 + 78189579
+5   lancedb.darwin-x64.node       	       0x164570f66 0x15fada000 + 78212966
+6   lancedb.darwin-x64.node       	       0x1645511c0 0x15fada000 + 78082496
+7   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+8   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 17:: tokio-runtime-worker
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   lancedb.darwin-x64.node       	       0x16457c6ce 0x15fada000 + 78259918
+3   lancedb.darwin-x64.node       	       0x164584bda 0x15fada000 + 78293978
+4   lancedb.darwin-x64.node       	       0x16456b40b 0x15fada000 + 78189579
+5   lancedb.darwin-x64.node       	       0x164570f66 0x15fada000 + 78212966
+6   lancedb.darwin-x64.node       	       0x1645511c0 0x15fada000 + 78082496
+7   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+8   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 18:: tokio-runtime-worker
+0   libsystem_kernel.dylib        	    0x7ff81ebfa34e kevent + 10
+1   lancedb.darwin-x64.node       	       0x164578cc6 0x15fada000 + 78245062
+2   lancedb.darwin-x64.node       	       0x164579ad2 0x15fada000 + 78248658
+3   lancedb.darwin-x64.node       	       0x16457c786 0x15fada000 + 78260102
+4   lancedb.darwin-x64.node       	       0x164584bda 0x15fada000 + 78293978
+5   lancedb.darwin-x64.node       	       0x16456b40b 0x15fada000 + 78189579
+6   lancedb.darwin-x64.node       	       0x164570f66 0x15fada000 + 78212966
+7   lancedb.darwin-x64.node       	       0x1645511c0 0x15fada000 + 78082496
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 19:: tokio-runtime-worker
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   lancedb.darwin-x64.node       	       0x16457c6ce 0x15fada000 + 78259918
+3   lancedb.darwin-x64.node       	       0x164584bda 0x15fada000 + 78293978
+4   lancedb.darwin-x64.node       	       0x16456b40b 0x15fada000 + 78189579
+5   lancedb.darwin-x64.node       	       0x164570f66 0x15fada000 + 78212966
+6   lancedb.darwin-x64.node       	       0x1645511c0 0x15fada000 + 78082496
+7   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+8   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 20:
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   CoreFoundation                	    0x7ff81ed7edcb CFRunLoopRun + 40
+6   fsevents.node                 	       0x101f3d732 fse_run_loop + 130
+7   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+8   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 21:: NetworkConfigWatcher
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   Foundation                    	    0x7ff81fb54d4a -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 216
+6   Electron Framework            	       0x10ff905cd node::AsyncResource::get_async_id() const + 10545149
+7   Electron Framework            	       0x10ff8e244 node::AsyncResource::get_async_id() const + 10536052
+8   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+9   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+10  Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+11  Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+12  Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+13  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+14  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 22:: CrShutdownDetector
+0   libsystem_kernel.dylib        	    0x7ff81ebf63ba read + 10
+1   Electron Framework            	       0x10c631f5b v8::CodeEvent::GetFunctionName() + 30683
+2   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+3   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+4   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 23:: NetworkConfigWatcher
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   Foundation                    	    0x7ff81fb54d4a -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 216
+6   Electron Framework            	       0x10ff905cd node::AsyncResource::get_async_id() const + 10545149
+7   Electron Framework            	       0x10ff8e244 node::AsyncResource::get_async_id() const + 10536052
+8   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+9   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+10  Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+11  Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+12  Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+13  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+14  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 24:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+6   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 25:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+6   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 26:: ThreadPoolSingleThreadForegroundBlocking0
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d14d node::AsyncResource::get_async_id() const + 10335101
+6   Electron Framework            	       0x10ff5d028 node::AsyncResource::get_async_id() const + 10334808
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 27:: CompositorTileWorker1
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   Electron Framework            	       0x10ff797fc node::AsyncResource::get_async_id() const + 10451500
+3   Electron Framework            	       0x1110c70e2 node::AsyncResource::get_async_id() const + 28594962
+4   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+5   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+6   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 28:: ThreadPoolSingleThreadSharedForeground1
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d11d node::AsyncResource::get_async_id() const + 10335053
+6   Electron Framework            	       0x10ff5d019 node::AsyncResource::get_async_id() const + 10334793
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 29:
+0   libsystem_kernel.dylib        	    0x7ff81ebf59b6 semaphore_wait_trap + 10
+1   Electron Framework            	       0x10c40bfc0 uv_sem_wait + 16
+2   Electron Framework            	       0x10c5c3373 v8::internal::CallInterfaceDescriptor::IsValidFloatParameterRegister(v8::internal::Register) + 277667
+3   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+4   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 30:: NetworkNotificationThreadMac
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   Foundation                    	    0x7ff81fb54d4a -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 216
+6   Electron Framework            	       0x10ff905cd node::AsyncResource::get_async_id() const + 10545149
+7   Electron Framework            	       0x10ff8e244 node::AsyncResource::get_async_id() const + 10536052
+8   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+9   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+10  Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+11  Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+12  Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+13  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+14  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 31:: ThreadPoolSingleThreadSharedForegroundBlocking2
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5c8f3 node::AsyncResource::get_async_id() const + 10332963
+5   Electron Framework            	       0x10ff5d254 node::AsyncResource::get_async_id() const + 10335364
+6   Electron Framework            	       0x10ff5d11d node::AsyncResource::get_async_id() const + 10335053
+7   Electron Framework            	       0x10ff5d019 node::AsyncResource::get_async_id() const + 10334793
+8   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 32:: NetworkConfigWatcher
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   Foundation                    	    0x7ff81fb54d4a -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 216
+6   Electron Framework            	       0x10ff905cd node::AsyncResource::get_async_id() const + 10545149
+7   Electron Framework            	       0x10ff8e244 node::AsyncResource::get_async_id() const + 10536052
+8   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+9   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+10  Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+11  Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+12  Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+13  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+14  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 33:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+6   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 34:: CacheThread_BlockFile
+0   libsystem_kernel.dylib        	    0x7ff81ebfe8ca kevent64 + 10
+1   Electron Framework            	       0x10ff9a837 node::AsyncResource::get_async_id() const + 10586727
+2   Electron Framework            	       0x10ff99dd5 node::AsyncResource::get_async_id() const + 10584069
+3   Electron Framework            	       0x10ff40c46 node::AsyncResource::get_async_id() const + 10219126
+4   Electron Framework            	       0x10ff00b7c node::AsyncResource::get_async_id() const + 9956780
+5   Electron Framework            	       0x10ff655a8 node::AsyncResource::get_async_id() const + 10368984
+6   Electron Framework            	       0x10ff6571f node::AsyncResource::get_async_id() const + 10369359
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 35 Crashed:
+0   Electron Framework            	       0x10c651fdf electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled() + 14735
+1   Electron Framework            	       0x10c651ff9 electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled() + 14761
+2   Electron Framework            	       0x10c652016 electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled() + 14790
+3   Electron Framework            	       0x10c6556c0 electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled() + 28784
+4   Electron Framework            	       0x10c65446e electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled() + 24094
+5   Electron Framework            	       0x10c66f5bd v8::internal::GetCurrentStackPosition() + 21821
+6   Electron Framework            	       0x10c66d110 v8::internal::GetCurrentStackPosition() + 12432
+7   libsystem_malloc.dylib        	    0x7ff81ea69e32 _malloc_zone_memalign + 302
+8   libsystem_malloc.dylib        	    0x7ff81ea56476 posix_memalign + 32
+9   libonnxruntime.1.14.0.dylib   	       0x25087fb63 onnxruntime::CPUAllocator::Alloc(unsigned long) + 51
+10  libonnxruntime.1.14.0.dylib   	       0x250883f2c onnxruntime::BFCArena::Extend(unsigned long)::$_0::operator()(unsigned long) const + 44
+11  libonnxruntime.1.14.0.dylib   	       0x250883689 onnxruntime::BFCArena::Extend(unsigned long) + 329
+12  libonnxruntime.1.14.0.dylib   	       0x250884b44 onnxruntime::BFCArena::AllocateRawInternal(unsigned long, bool, onnxruntime::Stream*, bool, std::__1::function<void (onnxruntime::Stream&, onnxruntime::synchronize::Notification&)>) + 1044
+13  libonnxruntime.1.14.0.dylib   	       0x2508846c4 onnxruntime::BFCArena::Alloc(unsigned long) + 52
+14  libonnxruntime.1.14.0.dylib   	       0x2508b502d onnxruntime::ExecutionFrame::ExecutionFrame(gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::SessionState const&, gsl::span<onnxruntime::Stream*, 18446744073709551615ul>) + 1325
+15  libonnxruntime.1.14.0.dylib   	       0x25092f1f6 onnxruntime::StreamExecutionContext::StreamExecutionContext(onnxruntime::SessionState const&, int, gsl::span<unsigned long const, 18446744073709551615ul>, unsigned long, onnxruntime::DeviceStreamCollection const*, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::logging::Logger const&, bool) + 342
+16  libonnxruntime.1.14.0.dylib   	       0x2508f6d4f onnxruntime::ExecuteThePlan(onnxruntime::SessionState const&, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::logging::Logger const&, onnxruntime::DeviceStreamCollection const*, bool const&, bool, bool) + 751
+17  libonnxruntime.1.14.0.dylib   	       0x25094b8c2 onnxruntime::utils::ExecuteGraphImpl(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager const&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, ExecutionMode, bool const&, onnxruntime::logging::Logger const&, onnxruntime::DeviceStreamCollection*, bool, onnxruntime::Stream*) + 1106
+18  libonnxruntime.1.14.0.dylib   	       0x25094b280 onnxruntime::utils::ExecuteGraph(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, ExecutionMode, bool const&, onnxruntime::logging::Logger const&, bool, bool, onnxruntime::Stream*) + 1152
+19  libonnxruntime.1.14.0.dylib   	       0x25094d6da onnxruntime::utils::ExecuteGraph(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, ExecutionMode, OrtRunOptions const&, onnxruntime::logging::Logger const&) + 378
+20  libonnxruntime.1.14.0.dylib   	       0x250042dfb onnxruntime::InferenceSession::Run(OrtRunOptions const&, gsl::span<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >*, std::__1::vector<OrtDevice, std::__1::allocator<OrtDevice> > const*) + 3851
+21  libonnxruntime.1.14.0.dylib   	       0x250073cad OrtApis::Run(OrtSession*, OrtRunOptions const*, char const* const*, OrtValue const* const*, unsigned long, char const* const*, unsigned long, OrtValue**) + 925
+22  onnxruntime_binding.node      	       0x10b90711f InferenceSessionWrap::Run(Napi::CallbackInfo const&) + 3343
+23  onnxruntime_binding.node      	       0x10b90aa6b Napi::InstanceWrap<InferenceSessionWrap>::InstanceMethodCallbackWrapper(napi_env__*, napi_callback_info__*)::'lambda'()::operator()() const + 139
+24  onnxruntime_binding.node      	       0x10b90a98a Napi::InstanceWrap<InferenceSessionWrap>::InstanceMethodCallbackWrapper(napi_env__*, napi_callback_info__*) + 42
+25  Electron Framework            	       0x113d1aa2c napi_is_detached_arraybuffer + 268
+26  Electron Framework            	       0x10c04e2c0 0x10c018000 + 221888
+27  Electron Framework            	       0x10c04c364 0x10c018000 + 213860
+28  Electron Framework            	       0x10c04c364 0x10c018000 + 213860
+29  Electron Framework            	       0x10c049f1c 0x10c018000 + 204572
+30  Electron Framework            	       0x10c049c47 0x10c018000 + 203847
+31  Electron Framework            	       0x10dae2249 v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*) + 521
+32  Electron Framework            	       0x10d9c5efc v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 588
+33  Electron Framework            	       0x113cb0df1 node::CallbackScope::~CallbackScope() + 1105
+34  Electron Framework            	       0x113cb09fe node::CallbackScope::~CallbackScope() + 94
+35  Electron Framework            	       0x113d77a46 node::OnFatalError(char const*, char const*) + 28886
+36  Electron Framework            	       0x113d930e0 node::OnFatalError(char const*, char const*) + 141168
+37  Electron Framework            	       0x113d6c392 node::Buffer::New(v8::Isolate*, char*, unsigned long) + 155554
+38  Electron Framework            	       0x10c3fad41 uv_random + 1425
+39  Electron Framework            	       0x10c3fee16 uv_async_send + 790
+40  Electron Framework            	       0x10c411107 uv_free_interface_addresses + 1815
+41  Electron Framework            	       0x10c3ff327 uv_run + 519
+42  Electron Framework            	       0x113cb1a23 node::SpinEventLoop(node::Environment*) + 419
+43  Electron Framework            	       0x113e5b1f3 node::PromiseRejectCallback(v8::PromiseRejectMessage) + 160419
+44  Electron Framework            	       0x113e5ec92 node::PromiseRejectCallback(v8::PromiseRejectMessage) + 175426
+45  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+46  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 36:: com.apple.NSEventThread
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   CoreFoundation                	    0x7ff81ecf936d __CFRunLoopServiceMachPort + 319
+3   CoreFoundation                	    0x7ff81ecf79f8 __CFRunLoopRun + 1276
+4   CoreFoundation                	    0x7ff81ecf6e3c CFRunLoopRunSpecific + 562
+5   AppKit                        	    0x7ff82189e9ce _NSEventThread + 132
+6   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 37:: ThreadPoolBackgroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5d8bf node::AsyncResource::get_async_id() const + 10337007
+5   Electron Framework            	       0x10ff5d05d node::AsyncResource::get_async_id() const + 10334861
+6   Electron Framework            	       0x10ff5d00a node::AsyncResource::get_async_id() const + 10334778
+7   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+8   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 38:: ThreadPoolSingleThreadSharedBackgroundBlocking3
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5c8f3 node::AsyncResource::get_async_id() const + 10332963
+5   Electron Framework            	       0x10ff5d254 node::AsyncResource::get_async_id() const + 10335364
+6   Electron Framework            	       0x10ff5d08d node::AsyncResource::get_async_id() const + 10334909
+7   Electron Framework            	       0x10ff5d037 node::AsyncResource::get_async_id() const + 10334823
+8   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 39:: ThreadPoolForegroundWorker
+0   libsystem_kernel.dylib        	    0x7ff81ebf597a mach_msg_trap + 10
+1   libsystem_kernel.dylib        	    0x7ff81ebf5ce8 mach_msg + 56
+2   Electron Framework            	       0x10ff93830 node::AsyncResource::get_async_id() const + 10558048
+3   Electron Framework            	       0x10ff1b5ea node::AsyncResource::get_async_id() const + 10065946
+4   Electron Framework            	       0x10ff5c8f3 node::AsyncResource::get_async_id() const + 10332963
+5   Electron Framework            	       0x10ff5d254 node::AsyncResource::get_async_id() const + 10335364
+6   Electron Framework            	       0x10ff5d0ed node::AsyncResource::get_async_id() const + 10335005
+7   Electron Framework            	       0x10ff5cfe1 node::AsyncResource::get_async_id() const + 10334737
+8   Electron Framework            	       0x10ff79f14 node::AsyncResource::get_async_id() const + 10453316
+9   libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 40:
+0   libsystem_kernel.dylib        	    0x7ff81ebf83ea __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81ec32a6f _pthread_cond_wait + 1249
+2   libc++.1.dylib                	    0x7ff81eb90d02 std::__1::condition_variable::wait(std::__1::unique_lock<std::__1::mutex>&) + 18
+3   libonnxruntime.1.14.0.dylib   	       0x250ce005b nsync::nsync_mu_semaphore_p_with_deadline(nsync::nsync_semaphore_s_*, timespec) + 443
+4   libonnxruntime.1.14.0.dylib   	       0x250cdd057 nsync::nsync_cv_wait_with_deadline_generic(nsync::nsync_cv_s_*, void*, void (*)(void*), void (*)(void*), timespec, nsync::nsync_note_s_*) + 423
+5   libonnxruntime.1.14.0.dylib   	       0x250cdd851 nsync::nsync_cv_wait(nsync::nsync_cv_s_*, nsync::nsync_mu_s_*) + 49
+6   libonnxruntime.1.14.0.dylib   	       0x250ac040b onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerData::SetBlocked(std::__1::function<bool ()>, std::__1::function<void ()>) + 123
+7   libonnxruntime.1.14.0.dylib   	       0x250abfc8a onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerLoop(int) + 1146
+8   libonnxruntime.1.14.0.dylib   	       0x250abdbe0 onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerLoop(int, Eigen::ThreadPoolInterface*) + 16
+9   libonnxruntime.1.14.0.dylib   	       0x250ac7904 onnxruntime::(anonymous namespace)::PosixThread::ThreadMain(void*) + 20
+10  libsystem_pthread.dylib       	    0x7ff81ec324e1 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff81ec2df6b thread_start + 15
+
+Thread 41:
+0   libsystem_pthread.dylib       	    0x7ff81ec2df48 start_wqthread + 0
+
+Thread 42:
+0   libsystem_pthread.dylib       	    0x7ff81ec2df48 start_wqthread + 0
+
+
+Thread 35 crashed with X86 Thread State (64-bit):
+  rax: 0x0000700017d1ef48  rbx: 0x0000000080000000  rcx: 0x000000000000000c  rdx: 0x000000000000e91b
+  rdi: 0x0000700017d1ef48  rsi: 0x000000000000e91b  rbp: 0x0000700017d1ef50  rsp: 0x0000700017d1ef40
+   r8: 0x0000000115b1a4c0   r9: 0x0000700017d1f0bf  r10: 0x00007ff860387c30  r11: 0x000000007ffffffc
+  r12: 0x0000000000004000  r13: 0x00007ff860387c30  r14: 0x0000000080000000  r15: 0x0000000115b1b908
+  rip: 0x000000010c651fdf  rfl: 0x0000000000000202  cr2: 0x0000103f6451bb38
+  
+Logical CPU:     2
+Error Code:      0x00000000 
+Trap Number:     3
+
+Thread 35 instruction stream:
+  55 48 89 e5 41 57 41 56-53 50 48 89 fb e8 f0 23  UH..AWAVSPH....#
+  a9 07 84 c0 74 57 4c 8b-7b 08 4c 8d 73 10 4d 39  ....tWL.{.L.s.M9
+  f7 74 2b 49 8b 7f 20 be-03 00 00 00 e8 ef 68 00  .t+I.. .......h.
+  00 49 8b 4f 08 48 85 c9-75 26 49 8b 47 10 4c 39  .I.O.H..u&I.G.L9
+  38 49 89 c7 75 f4 49 89-c7 4c 39 f0 75 d5 48 89  8I..u.I..L9.u.H.
+  df 48 83 c4 08 5b 41 5e-41 5f 5d e9 9c 23 a9 07  .H...[A^A_]..#..
+  48 89 c8 48 8b 09 48 85-c9 74 db eb f3 48 89 df  H..H..H..t...H..
+  e8 8b 81 00 00 eb 9f 00-00 00 00 00 00 00 00 00  ................
+  55 48 89 e5 48 83 ec 10-48 89 3d 99 68 4c 09 48  UH..H...H.=.hL.H
+  8d 45 f8 48 89 38 48 89-c7 e8 82 98 eb ff cc[0f] .E.H.8H.........	<==
+  0b 66 66 66 66 66 66 2e-0f 1f 84 00 00 00 00 00  .ffffff.........
+  55 48 89 e5 e8 c7 ff ff-ff 0f 1f 80 00 00 00 00  UH..............
+
+Binary Images:
+    0x7ff81ebf4000 -     0x7ff81ec2bfff libsystem_kernel.dylib (*) <8cc28466-fd2f-3c80-9834-9525b7beac19> /usr/lib/system/libsystem_kernel.dylib
+    0x7ff81ec79000 -     0x7ff81f17bfff com.apple.CoreFoundation (6.9) <93c48919-68af-367e-9a67-db4159bc962c> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+    0x7ff827978000 -     0x7ff827c6bfff com.apple.HIToolbox (2.1.1) <06fdecd6-9f69-397b-b1e2-a8226c0ba7ed> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+    0x7ff8216f2000 -     0x7ff822581fff com.apple.AppKit (6.9) <06015263-62ac-3b08-a298-dc835c18452a> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+       0x10c018000 -        0x11550afff com.github.Electron.framework (*) <4c4c44e3-5555-3144-a18f-143b0e46e43e> /Users/USER/Downloads/*/Electron.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Electron Framework
+       0x10bf60000 -        0x10bfcbfff dyld (*) <71febccd-d9dc-3599-9971-2b3407c588a8> /usr/lib/dyld
+    0x7ff81ec2c000 -     0x7ff81ec37fff libsystem_pthread.dylib (*) <b5454e27-e8c7-3fdb-b77f-714f1e82e70b> /usr/lib/system/libsystem_pthread.dylib
+    0x7ff81ec44000 -     0x7ff81ec4dfff libsystem_platform.dylib (*) <a8a33774-6d44-35e9-ad2a-bad9e4d5192a> /usr/lib/system/libsystem_platform.dylib
+       0x15fada000 -        0x165331fff lancedb.darwin-x64.node (*) <c0d64616-6e35-3517-a971-47dc343bb97f> /Users/USER/Downloads/*/lancedb.darwin-x64.node
+       0x101f39000 -        0x101f40fff fsevents.node (*) <21fe384c-8fbc-38ba-ba62-29b60297aea6> /Users/USER/Downloads/*/fsevents.node
+    0x7ff81faf5000 -     0x7ff81feb1fff com.apple.Foundation (6.9) <e22e60bb-ab77-3120-862f-92fa74feffcf> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+    0x7ff81ea4c000 -     0x7ff81ea77fff libsystem_malloc.dylib (*) <47042acd-a337-322a-8db7-ecd59cc60d92> /usr/lib/system/libsystem_malloc.dylib
+       0x250000000 -        0x250f33fff libonnxruntime.1.14.0.dylib (*) <2831b413-21eb-3b2b-934e-3a57627a4c2d> /Users/USER/Downloads/*/libonnxruntime.1.14.0.dylib
+       0x10b901000 -        0x10b91cfff onnxruntime_binding.node (*) <16e5cf9b-9b25-3573-b8d0-09e31471143b> /Users/USER/Downloads/*/onnxruntime_binding.node
+    0x7ff81eb85000 -     0x7ff81ebddfff libc++.1.dylib (*) <e67ac91f-f1dc-30ec-84f3-83f5bdad3434> /usr/lib/libc++.1.dylib
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 152
+    thread_create: 0
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=1.4G resident=0K(0%) swapped_out_or_unallocated=1.4G(100%)
+Writable regions: Total=3.7G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=3.7G(100%)
+
+                                VIRTUAL   REGION 
+REGION TYPE                        SIZE    COUNT (non-coalesced) 
+===========                     =======  ======= 
+Accelerate framework               128K        1 
+Activity Tracing                   256K        1 
+CG backing stores                 2160K        4 
+CG image                            72K        4 
+ColorSync                          212K       24 
+CoreAnimation                      100K        8 
+CoreGraphics                         4K        1 
+CoreUI image data                 1320K        8 
+Dispatch continuations            32.0M        1 
+Foundation                          48K        2 
+IOKit                             7940K        1 
+Kernel Alloc Once                    8K        1 
+MALLOC                            40.2M       25 
+MALLOC guard page                   32K        8 
+Mach message                        24K        3 
+Memory Tag 253                    31.3G     2498 
+Memory Tag 253 (reserved)        740.1M        4         reserved VM address space (unallocated)
+Memory Tag 255                     1.1T      953 
+Memory Tag 255 (reserved)          320K        5         reserved VM address space (unallocated)
+ObjC additional data                15K        1 
+STACK GUARD                       56.2M       43 
+Stack                            262.9M       46 
+VM_ALLOCATE                       12.2M       28 
+__CTF                               756        1 
+__DATA                            42.5M      550 
+__DATA_CONST                      36.9M      357 
+__DATA_DIRTY                      1662K      224 
+__FONT_DATA                          4K        1 
+__LINKEDIT                       657.6M       20 
+__TEXT                           777.8M      561 
+__UNICODE                          592K        1 
+dyld private memory               1024K        3 
+mapped file                      248.4M       38 
+shared memory                      780K       18 
+===========                     =======  ======= 
+TOTAL                              1.1T     5444 
+TOTAL, minus reserved VM space     1.1T     5444 
+
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"Electron","timestamp":"2026-01-26 19:02:23.00 +0800","app_version":"28.3.3","slice_uuid":"4c4c4428-5555-3144-a186-867e51c9f6ce","build_version":"28.3.3","platform":1,"bundleID":"com.github.Electron","share_with_app_devs":0,"is_first_party":0,"bug_type":"309","os_version":"macOS 12.6 (21G115)","incident_id":"6C56033E-1139-49BD-8082-668F712CB897","name":"Electron"}
+{
+  "uptime" : 510000,
+  "procLaunch" : "2026-01-26 19:01:35.3729 +0800",
+  "procRole" : "Background",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "MacBookPro14,1",
+  "procStartAbsTime" : 511845607317451,
+  "coalitionID" : 62443,
+  "osVersion" : {
+    "train" : "macOS 12.6",
+    "build" : "21G115",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2026-01-26 19:02:22.6546 +0800",
+  "incident" : "6C56033E-1139-49BD-8082-668F712CB897",
+  "bug_type" : "309",
+  "pid" : 38980,
+  "procExitAbsTime" : 511892842477947,
+  "cpuType" : "X86-64",
+  "procName" : "Electron",
+  "procPath" : "\/Users\/USER\/Downloads\/*\/Electron.app\/Contents\/MacOS\/Electron",
+  "bundleInfo" : {"CFBundleShortVersionString":"28.3.3","CFBundleVersion":"28.3.3","CFBundleIdentifier":"com.github.Electron"},
+  "storeInfo" : {"deviceIdentifierForVendor":"5D3F59C7-19BD-5937-89BA-37633005D16E","thirdParty":true},
+  "parentProc" : "node",
+  "parentPid" : 38979,
+  "coalitionName" : "com.trae.app",
+  "crashReporterKey" : "E2C920A9-C62D-4587-FB15-EF40F1092277",
+  "responsiblePid" : 24653,
+  "responsibleProc" : "Electron",
+  "wakeTime" : 20579,
+  "sleepWakeUUID" : "7D84B849-0D3D-48CD-901F-9A2C2D4898D0",
+  "sip" : "enabled",
+  "isCorpse" : 1,
+  "exception" : {"codes":"0x0000000000000002, 0x0000000000000000","rawCodes":[2,0],"type":"EXC_BREAKPOINT","signal":"SIGTRAP"},
+  "termination" : {"flags":0,"code":5,"namespace":"SIGNAL","indicator":"Trace\/BPT trap: 5","byProc":"exc handler","byPid":38980},
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":0,"task_for_pid":152},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 35,
+  "threads" : [{"id":13224467,"name":"CrBrowserMain","queue":"com.apple.main-thread","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":189926,"symbol":"RunCurrentEventLoopInMode","symbolLocation":292,"imageIndex":2},{"imageOffset":189258,"symbol":"ReceiveNextEventCommon","symbolLocation":594,"imageIndex":2},{"imageOffset":188645,"symbol":"_BlockUntilNextEventMatchingListInModeWithFilter","symbolLocation":70,"imageIndex":2},{"imageOffset":257965,"symbol":"_DPSNextEvent","symbolLocation":927,"imageIndex":3},{"imageOffset":251498,"symbol":"-[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:]","symbolLocation":1394,"imageIndex":3},{"imageOffset":195865,"symbol":"-[NSApplication run]","symbolLocation":586,"imageIndex":3},{"imageOffset":66553702,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10545558,"imageIndex":4},{"imageOffset":66544196,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10536052,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":48361733,"symbol":"node::GetArrayBufferAllocator(node::IsolateData*)","symbolLocation":2556037,"imageIndex":4},{"imageOffset":48368690,"symbol":"node::GetArrayBufferAllocator(node::IsolateData*)","symbolLocation":2562994,"imageIndex":4},{"imageOffset":48350799,"symbol":"node::GetArrayBufferAllocator(node::IsolateData*)","symbolLocation":2545103,"imageIndex":4},{"imageOffset":7980018,"symbol":"v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*)","symbolLocation":16754,"imageIndex":4},{"imageOffset":7984775,"symbol":"v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*)","symbolLocation":21511,"imageIndex":4},{"imageOffset":7984245,"symbol":"v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*)","symbolLocation":20981,"imageIndex":4},{"imageOffset":7978154,"symbol":"v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*)","symbolLocation":14890,"imageIndex":4},{"imageOffset":7978424,"symbol":"v8::internal::compiler::BasicBlock::set_loop_header(v8::internal::compiler::BasicBlock*)","symbolLocation":15160,"imageIndex":4},{"imageOffset":4168187,"symbol":"ElectronMain","symbolLocation":155,"imageIndex":4},{"imageOffset":21806,"symbol":"start","symbolLocation":462,"imageIndex":5}]},{"id":13224474,"name":"ThreadPoolServiceThread","frames":[{"imageOffset":43210,"symbol":"kevent64","symbolLocation":10,"imageIndex":0},{"imageOffset":66594871,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10586727,"imageIndex":4},{"imageOffset":66592213,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10584069,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66269837,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10261693,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224475,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224476,"name":"ThreadPoolBackgroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343005,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334861,"imageIndex":4},{"imageOffset":66342922,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334778,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224477,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224478,"name":"Chrome_IOThread","frames":[{"imageOffset":43210,"symbol":"kevent64","symbolLocation":10,"imageIndex":0},{"imageOffset":66594871,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10586727,"imageIndex":4},{"imageOffset":66592213,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10584069,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":48372223,"symbol":"node::GetArrayBufferAllocator(node::IsolateData*)","symbolLocation":2566527,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224479,"name":"MemoryInfra","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66073810,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065666,"imageIndex":4},{"imageOffset":65797019,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9788875,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224481,"frames":[{"imageOffset":25422,"symbol":"kevent","symbolLocation":10,"imageIndex":0},{"imageOffset":4166704,"symbol":"uv_free_interface_addresses","symbolLocation":2624,"imageIndex":4},{"imageOffset":4092711,"symbol":"uv_run","symbolLocation":519,"imageIndex":4},{"imageOffset":131962634,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":527770,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224482,"frames":[{"imageOffset":39131710,"symbol":"v8::internal::compiler::GraphReducer::ReduceNode(v8::internal::compiler::Node*)","symbolLocation":1006,"imageIndex":4},{"imageOffset":40428913,"symbol":"v8::internal::compiler::Pipeline::AllocateRegistersForTesting(v8::internal::RegisterConfiguration const*, v8::internal::compiler::InstructionSequence*, bool, bool)","symbolLocation":24065,"imageIndex":4},{"imageOffset":40367209,"symbol":"v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*)","symbolLocation":18153,"imageIndex":4},{"imageOffset":40356294,"symbol":"v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*)","symbolLocation":7238,"imageIndex":4},{"imageOffset":40355467,"symbol":"v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*)","symbolLocation":6411,"imageIndex":4},{"imageOffset":27507831,"symbol":"v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*)","symbolLocation":55,"imageIndex":4},{"imageOffset":27778279,"symbol":"v8::internal::OptimizingCompileDispatcher::CompileNext(v8::internal::TurbofanCompilationJob*, v8::internal::LocalIsolate*)","symbolLocation":39,"imageIndex":4},{"imageOffset":27784372,"symbol":"v8::internal::OptimizingCompileDispatcher::OptimizingCompileDispatcher(v8::internal::Isolate*)","symbolLocation":3204,"imageIndex":4},{"imageOffset":131950646,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":515782,"imageIndex":4},{"imageOffset":131952948,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":518084,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224483,"frames":[{"imageOffset":34602073,"symbol":"v8::internal::maglev::MaglevConcurrentDispatcher::Flush(v8::internal::BlockingBehavior)","symbolLocation":133577,"imageIndex":4},{"imageOffset":34247642,"symbol":"v8::internal::Zone::ReleaseSegment(v8::internal::Segment*)","symbolLocation":222442,"imageIndex":4},{"imageOffset":34226442,"symbol":"v8::internal::Zone::ReleaseSegment(v8::internal::Segment*)","symbolLocation":201242,"imageIndex":4},{"imageOffset":34223631,"symbol":"v8::internal::Zone::ReleaseSegment(v8::internal::Segment*)","symbolLocation":198431,"imageIndex":4},{"imageOffset":34463819,"symbol":"v8::internal::compiler::JSHeapBroker::DetachLocalIsolateForMaglev(v8::internal::maglev::MaglevCompilationInfo*)","symbolLocation":891,"imageIndex":4},{"imageOffset":27507831,"symbol":"v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*)","symbolLocation":55,"imageIndex":4},{"imageOffset":34469671,"symbol":"v8::internal::maglev::MaglevConcurrentDispatcher::Flush(v8::internal::BlockingBehavior)","symbolLocation":1175,"imageIndex":4},{"imageOffset":131950646,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":515782,"imageIndex":4},{"imageOffset":131952948,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":518084,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224484,"frames":[{"imageOffset":12522,"symbol":"__ulock_wait","symbolLocation":10,"imageIndex":0},{"imageOffset":8830,"symbol":"_os_unfair_lock_lock_slow","symbolLocation":155,"imageIndex":7},{"imageOffset":6665425,"symbol":"v8::internal::GetCurrentStackPosition()","symbolLocation":37969,"imageIndex":4},{"imageOffset":34024368,"symbol":"v8::internal::Zone::~Zone()","symbolLocation":96,"imageIndex":4},{"imageOffset":41088993,"symbol":"v8::internal::compiler::ZoneStats::ReturnZone(v8::internal::Zone*)","symbolLocation":225,"imageIndex":4},{"imageOffset":40359606,"symbol":"v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*)","symbolLocation":10550,"imageIndex":4},{"imageOffset":40355486,"symbol":"v8::internal::compiler::PairLoadStoreReducer::Reduce(v8::internal::compiler::Node*)","symbolLocation":6430,"imageIndex":4},{"imageOffset":27507831,"symbol":"v8::internal::OptimizedCompilationJob::ExecuteJob(v8::internal::RuntimeCallStats*, v8::internal::LocalIsolate*)","symbolLocation":55,"imageIndex":4},{"imageOffset":27778279,"symbol":"v8::internal::OptimizingCompileDispatcher::CompileNext(v8::internal::TurbofanCompilationJob*, v8::internal::LocalIsolate*)","symbolLocation":39,"imageIndex":4},{"imageOffset":27784372,"symbol":"v8::internal::OptimizingCompileDispatcher::OptimizingCompileDispatcher(v8::internal::Isolate*)","symbolLocation":3204,"imageIndex":4},{"imageOffset":131950646,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":515782,"imageIndex":4},{"imageOffset":131952948,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":518084,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224485,"frames":[{"imageOffset":6582,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":4145088,"symbol":"uv_sem_wait","symbolLocation":16,"imageIndex":4},{"imageOffset":132653772,"symbol":"node::SetTracingController(v8::TracingController*)","symbolLocation":95676,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224491,"frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":4143545,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":4},{"imageOffset":4075852,"symbol":"uv_cancel","symbolLocation":716,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224492,"frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":4143545,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":4},{"imageOffset":4075852,"symbol":"uv_cancel","symbolLocation":716,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224493,"frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":4143545,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":4},{"imageOffset":4075852,"symbol":"uv_cancel","symbolLocation":716,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224494,"frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":4143545,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":4},{"imageOffset":4075852,"symbol":"uv_cancel","symbolLocation":716,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224544,"name":"tokio-runtime-worker","frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":78259918,"imageIndex":8},{"imageOffset":78293978,"imageIndex":8},{"imageOffset":78189579,"imageIndex":8},{"imageOffset":78212966,"imageIndex":8},{"imageOffset":78082496,"imageIndex":8},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224545,"name":"tokio-runtime-worker","frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":78259918,"imageIndex":8},{"imageOffset":78293978,"imageIndex":8},{"imageOffset":78189579,"imageIndex":8},{"imageOffset":78212966,"imageIndex":8},{"imageOffset":78082496,"imageIndex":8},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224546,"name":"tokio-runtime-worker","frames":[{"imageOffset":25422,"symbol":"kevent","symbolLocation":10,"imageIndex":0},{"imageOffset":78245062,"imageIndex":8},{"imageOffset":78248658,"imageIndex":8},{"imageOffset":78260102,"imageIndex":8},{"imageOffset":78293978,"imageIndex":8},{"imageOffset":78189579,"imageIndex":8},{"imageOffset":78212966,"imageIndex":8},{"imageOffset":78082496,"imageIndex":8},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224547,"name":"tokio-runtime-worker","frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":78259918,"imageIndex":8},{"imageOffset":78293978,"imageIndex":8},{"imageOffset":78189579,"imageIndex":8},{"imageOffset":78212966,"imageIndex":8},{"imageOffset":78082496,"imageIndex":8},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224592,"frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":1072587,"symbol":"CFRunLoopRun","symbolLocation":40,"imageIndex":1},{"imageOffset":18226,"symbol":"fse_run_loop","symbolLocation":130,"imageIndex":9},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224595,"name":"NetworkConfigWatcher","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":392522,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":216,"imageIndex":10},{"imageOffset":66553293,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10545149,"imageIndex":4},{"imageOffset":66544196,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10536052,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224596,"name":"CrShutdownDetector","frames":[{"imageOffset":9146,"symbol":"read","symbolLocation":10,"imageIndex":0},{"imageOffset":6397787,"symbol":"v8::CodeEvent::GetFunctionName()","symbolLocation":30683,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224597,"name":"NetworkConfigWatcher","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":392522,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":216,"imageIndex":10},{"imageOffset":66553293,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10545149,"imageIndex":4},{"imageOffset":66544196,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10536052,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224598,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224599,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224600,"name":"ThreadPoolSingleThreadForegroundBlocking0","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343245,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335101,"imageIndex":4},{"imageOffset":66342952,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334808,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224601,"name":"CompositorTileWorker1","frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":66459644,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10451500,"imageIndex":4},{"imageOffset":84603106,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":28594962,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224602,"name":"ThreadPoolSingleThreadSharedForeground1","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343197,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335053,"imageIndex":4},{"imageOffset":66342937,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334793,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224604,"frames":[{"imageOffset":6582,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":4145088,"symbol":"uv_sem_wait","symbolLocation":16,"imageIndex":4},{"imageOffset":5944179,"symbol":"v8::internal::CallInterfaceDescriptor::IsValidFloatParameterRegister(v8::internal::Register)","symbolLocation":277667,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224605,"name":"NetworkNotificationThreadMac","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":392522,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":216,"imageIndex":10},{"imageOffset":66553293,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10545149,"imageIndex":4},{"imageOffset":66544196,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10536052,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224617,"name":"ThreadPoolSingleThreadSharedForegroundBlocking2","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66341107,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10332963,"imageIndex":4},{"imageOffset":66343508,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335364,"imageIndex":4},{"imageOffset":66343197,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335053,"imageIndex":4},{"imageOffset":66342937,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334793,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224618,"name":"NetworkConfigWatcher","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":392522,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":216,"imageIndex":10},{"imageOffset":66553293,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10545149,"imageIndex":4},{"imageOffset":66544196,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10536052,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224619,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224624,"name":"CacheThread_BlockFile","frames":[{"imageOffset":43210,"symbol":"kevent64","symbolLocation":10,"imageIndex":0},{"imageOffset":66594871,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10586727,"imageIndex":4},{"imageOffset":66592213,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10584069,"imageIndex":4},{"imageOffset":66227270,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10219126,"imageIndex":4},{"imageOffset":65964924,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":9956780,"imageIndex":4},{"imageOffset":66377128,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10368984,"imageIndex":4},{"imageOffset":66377503,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10369359,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"triggered":true,"id":13224654,"instructionState":{"instructionStream":{"bytes":[85,72,137,229,65,87,65,86,83,80,72,137,251,232,240,35,169,7,132,192,116,87,76,139,123,8,76,141,115,16,77,57,247,116,43,73,139,127,32,190,3,0,0,0,232,239,104,0,0,73,139,79,8,72,133,201,117,38,73,139,71,16,76,57,56,73,137,199,117,244,73,137,199,76,57,240,117,213,72,137,223,72,131,196,8,91,65,94,65,95,93,233,156,35,169,7,72,137,200,72,139,9,72,133,201,116,219,235,243,72,137,223,232,139,129,0,0,235,159,0,0,0,0,0,0,0,0,0,85,72,137,229,72,131,236,16,72,137,61,153,104,76,9,72,141,69,248,72,137,56,72,137,199,232,130,152,235,255,204,15,11,102,102,102,102,102,102,46,15,31,132,0,0,0,0,0,85,72,137,229,232,199,255,255,255,15,31,128,0,0,0,0],"offset":159}},"threadState":{"r13":{"value":140704742931504,"symbolLocation":0,"symbol":"vm_page_shift"},"rax":{"value":123145701945160},"rflags":{"value":514},"cpu":{"value":2},"r14":{"value":2147483648},"rsi":{"value":59675},"r8":{"value":4658930880},"cr2":{"value":17864452062008},"rdx":{"value":59675},"r10":{"value":140704742931504,"symbolLocation":0,"symbol":"vm_page_shift"},"r9":{"value":123145701945535},"r15":{"value":4658936072},"rbx":{"value":2147483648},"trap":{"value":3},"err":{"value":0},"r11":{"value":2147483644},"rip":{"value":4502921183,"matchesCrashFrame":1},"rbp":{"value":123145701945168},"rsp":{"value":123145701945152},"r12":{"value":16384},"rcx":{"value":12},"flavor":"x86_THREAD_STATE","rdi":{"value":123145701945160}},"frames":[{"imageOffset":6528991,"symbol":"electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled()","symbolLocation":14735,"imageIndex":4},{"imageOffset":6529017,"symbol":"electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled()","symbolLocation":14761,"imageIndex":4},{"imageOffset":6529046,"symbol":"electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled()","symbolLocation":14790,"imageIndex":4},{"imageOffset":6543040,"symbol":"electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled()","symbolLocation":28784,"imageIndex":4},{"imageOffset":6538350,"symbol":"electron::fuses::IsLoadBrowserProcessSpecificV8SnapshotEnabled()","symbolLocation":24094,"imageIndex":4},{"imageOffset":6649277,"symbol":"v8::internal::GetCurrentStackPosition()","symbolLocation":21821,"imageIndex":4},{"imageOffset":6639888,"symbol":"v8::internal::GetCurrentStackPosition()","symbolLocation":12432,"imageIndex":4},{"imageOffset":122418,"symbol":"_malloc_zone_memalign","symbolLocation":302,"imageIndex":11},{"imageOffset":42102,"symbol":"posix_memalign","symbolLocation":32,"imageIndex":11},{"imageOffset":8911715,"symbol":"onnxruntime::CPUAllocator::Alloc(unsigned long)","symbolLocation":51,"imageIndex":12},{"imageOffset":8929068,"symbol":"onnxruntime::BFCArena::Extend(unsigned long)::$_0::operator()(unsigned long) const","symbolLocation":44,"imageIndex":12},{"imageOffset":8926857,"symbol":"onnxruntime::BFCArena::Extend(unsigned long)","symbolLocation":329,"imageIndex":12},{"imageOffset":8932164,"symbol":"onnxruntime::BFCArena::AllocateRawInternal(unsigned long, bool, onnxruntime::Stream*, bool, std::__1::function<void (onnxruntime::Stream&, onnxruntime::synchronize::Notification&)>)","symbolLocation":1044,"imageIndex":12},{"imageOffset":8931012,"symbol":"onnxruntime::BFCArena::Alloc(unsigned long)","symbolLocation":52,"imageIndex":12},{"imageOffset":9130029,"symbol":"onnxruntime::ExecutionFrame::ExecutionFrame(gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::SessionState const&, gsl::span<onnxruntime::Stream*, 18446744073709551615ul>)","symbolLocation":1325,"imageIndex":12},{"imageOffset":9630198,"symbol":"onnxruntime::StreamExecutionContext::StreamExecutionContext(onnxruntime::SessionState const&, int, gsl::span<unsigned long const, 18446744073709551615ul>, unsigned long, onnxruntime::DeviceStreamCollection const*, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::logging::Logger const&, bool)","symbolLocation":342,"imageIndex":12},{"imageOffset":9399631,"symbol":"onnxruntime::ExecuteThePlan(onnxruntime::SessionState const&, gsl::span<int const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<int const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, onnxruntime::logging::Logger const&, onnxruntime::DeviceStreamCollection const*, bool const&, bool, bool)","symbolLocation":751,"imageIndex":12},{"imageOffset":9746626,"symbol":"onnxruntime::utils::ExecuteGraphImpl(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager const&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, std::__1::unordered_map<unsigned long, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<unsigned long const, std::__1::function<onnxruntime::common::Status (onnxruntime::TensorShape const&, OrtMemoryInfo const&, OrtValue&, bool&)> > > > const&, ExecutionMode, bool const&, onnxruntime::logging::Logger const&, onnxruntime::DeviceStreamCollection*, bool, onnxruntime::Stream*)","symbolLocation":1106,"imageIndex":12},{"imageOffset":9745024,"symbol":"onnxruntime::utils::ExecuteGraph(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, ExecutionMode, bool const&, onnxruntime::logging::Logger const&, bool, bool, onnxruntime::Stream*)","symbolLocation":1152,"imageIndex":12},{"imageOffset":9754330,"symbol":"onnxruntime::utils::ExecuteGraph(onnxruntime::SessionState const&, onnxruntime::FeedsFetchesManager&, gsl::span<OrtValue const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >&, ExecutionMode, OrtRunOptions const&, onnxruntime::logging::Logger const&)","symbolLocation":378,"imageIndex":12},{"imageOffset":273915,"symbol":"onnxruntime::InferenceSession::Run(OrtRunOptions const&, gsl::span<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const, 18446744073709551615ul>, gsl::span<OrtValue const, 18446744073709551615ul>, gsl::span<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const, 18446744073709551615ul>, std::__1::vector<OrtValue, std::__1::allocator<OrtValue> >*, std::__1::vector<OrtDevice, std::__1::allocator<OrtDevice> > const*)","symbolLocation":3851,"imageIndex":12},{"imageOffset":474285,"symbol":"OrtApis::Run(OrtSession*, OrtRunOptions const*, char const* const*, OrtValue const* const*, unsigned long, char const* const*, unsigned long, OrtValue**)","symbolLocation":925,"imageIndex":12},{"imageOffset":24863,"symbol":"InferenceSessionWrap::Run(Napi::CallbackInfo const&)","symbolLocation":3343,"imageIndex":13},{"imageOffset":39531,"symbol":"Napi::InstanceWrap<InferenceSessionWrap>::InstanceMethodCallbackWrapper(napi_env__*, napi_callback_info__*)::'lambda'()::operator()() const","symbolLocation":139,"imageIndex":13},{"imageOffset":39306,"symbol":"Napi::InstanceWrap<InferenceSessionWrap>::InstanceMethodCallbackWrapper(napi_env__*, napi_callback_info__*)","symbolLocation":42,"imageIndex":13},{"imageOffset":131082796,"symbol":"napi_is_detached_arraybuffer","symbolLocation":268,"imageIndex":4},{"imageOffset":221888,"imageIndex":4},{"imageOffset":213860,"imageIndex":4},{"imageOffset":213860,"imageIndex":4},{"imageOffset":204572,"imageIndex":4},{"imageOffset":203847,"imageIndex":4},{"imageOffset":28090953,"symbol":"v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*)","symbolLocation":521,"imageIndex":4},{"imageOffset":26926844,"symbol":"v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*)","symbolLocation":588,"imageIndex":4},{"imageOffset":130649585,"symbol":"node::CallbackScope::~CallbackScope()","symbolLocation":1105,"imageIndex":4},{"imageOffset":130648574,"symbol":"node::CallbackScope::~CallbackScope()","symbolLocation":94,"imageIndex":4},{"imageOffset":131463750,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":28886,"imageIndex":4},{"imageOffset":131576032,"symbol":"node::OnFatalError(char const*, char const*)","symbolLocation":141168,"imageIndex":4},{"imageOffset":131416978,"symbol":"node::Buffer::New(v8::Isolate*, char*, unsigned long)","symbolLocation":155554,"imageIndex":4},{"imageOffset":4074817,"symbol":"uv_random","symbolLocation":1425,"imageIndex":4},{"imageOffset":4091414,"symbol":"uv_async_send","symbolLocation":790,"imageIndex":4},{"imageOffset":4165895,"symbol":"uv_free_interface_addresses","symbolLocation":1815,"imageIndex":4},{"imageOffset":4092711,"symbol":"uv_run","symbolLocation":519,"imageIndex":4},{"imageOffset":130652707,"symbol":"node::SpinEventLoop(node::Environment*)","symbolLocation":419,"imageIndex":4},{"imageOffset":132395507,"symbol":"node::PromiseRejectCallback(v8::PromiseRejectMessage)","symbolLocation":160419,"imageIndex":4},{"imageOffset":132410514,"symbol":"node::PromiseRejectCallback(v8::PromiseRejectMessage)","symbolLocation":175426,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224674,"name":"com.apple.NSEventThread","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":525165,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":1},{"imageOffset":518648,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":1},{"imageOffset":515644,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":1},{"imageOffset":1755598,"symbol":"_NSEventThread","symbolLocation":132,"imageIndex":3},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224684,"name":"ThreadPoolBackgroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66345151,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10337007,"imageIndex":4},{"imageOffset":66343005,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334861,"imageIndex":4},{"imageOffset":66342922,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334778,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224687,"name":"ThreadPoolSingleThreadSharedBackgroundBlocking3","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66341107,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10332963,"imageIndex":4},{"imageOffset":66343508,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335364,"imageIndex":4},{"imageOffset":66343053,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334909,"imageIndex":4},{"imageOffset":66342967,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334823,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13224940,"name":"ThreadPoolForegroundWorker","frames":[{"imageOffset":6522,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":0},{"imageOffset":7400,"symbol":"mach_msg","symbolLocation":56,"imageIndex":0},{"imageOffset":66566192,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10558048,"imageIndex":4},{"imageOffset":66074090,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10065946,"imageIndex":4},{"imageOffset":66341107,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10332963,"imageIndex":4},{"imageOffset":66343508,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335364,"imageIndex":4},{"imageOffset":66343149,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10335005,"imageIndex":4},{"imageOffset":66342881,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10334737,"imageIndex":4},{"imageOffset":66461460,"symbol":"node::AsyncResource::get_async_id() const","symbolLocation":10453316,"imageIndex":4},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13225573,"frames":[{"imageOffset":17386,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":0},{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":6},{"imageOffset":48386,"symbol":"std::__1::condition_variable::wait(std::__1::unique_lock<std::__1::mutex>&)","symbolLocation":18,"imageIndex":14},{"imageOffset":13500507,"symbol":"nsync::nsync_mu_semaphore_p_with_deadline(nsync::nsync_semaphore_s_*, timespec)","symbolLocation":443,"imageIndex":12},{"imageOffset":13488215,"symbol":"nsync::nsync_cv_wait_with_deadline_generic(nsync::nsync_cv_s_*, void*, void (*)(void*), void (*)(void*), timespec, nsync::nsync_note_s_*)","symbolLocation":423,"imageIndex":12},{"imageOffset":13490257,"symbol":"nsync::nsync_cv_wait(nsync::nsync_cv_s_*, nsync::nsync_mu_s_*)","symbolLocation":49,"imageIndex":12},{"imageOffset":11273227,"symbol":"onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerData::SetBlocked(std::__1::function<bool ()>, std::__1::function<void ()>)","symbolLocation":123,"imageIndex":12},{"imageOffset":11271306,"symbol":"onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerLoop(int)","symbolLocation":1146,"imageIndex":12},{"imageOffset":11262944,"symbol":"onnxruntime::concurrency::ThreadPoolTempl<onnxruntime::Env>::WorkerLoop(int, Eigen::ThreadPoolInterface*)","symbolLocation":16,"imageIndex":12},{"imageOffset":11303172,"symbol":"onnxruntime::(anonymous namespace)::PosixThread::ThreadMain(void*)","symbolLocation":20,"imageIndex":12},{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":6},{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":6}]},{"id":13226155,"frames":[{"imageOffset":8008,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":6}]},{"id":13226172,"frames":[{"imageOffset":8008,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":6}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703644467200,
+    "size" : 229376,
+    "uuid" : "8cc28466-fd2f-3c80-9834-9525b7beac19",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64h",
+    "base" : 140703645011968,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 5255168,
+    "uuid" : "93c48919-68af-367e-9a67-db4159bc962c",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "1866"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703792857088,
+    "CFBundleShortVersionString" : "2.1.1",
+    "CFBundleIdentifier" : "com.apple.HIToolbox",
+    "size" : 3096576,
+    "uuid" : "06fdecd6-9f69-397b-b1e2-a8226c0ba7ed",
+    "path" : "\/System\/Library\/Frameworks\/Carbon.framework\/Versions\/A\/Frameworks\/HIToolbox.framework\/Versions\/A\/HIToolbox",
+    "name" : "HIToolbox"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703689547776,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.AppKit",
+    "size" : 15269888,
+    "uuid" : "06015263-62ac-3b08-a298-dc835c18452a",
+    "path" : "\/System\/Library\/Frameworks\/AppKit.framework\/Versions\/C\/AppKit",
+    "name" : "AppKit",
+    "CFBundleVersion" : "2113.60.148"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4496392192,
+    "CFBundleIdentifier" : "com.github.Electron.framework",
+    "size" : 156184576,
+    "uuid" : "4c4c44e3-5555-3144-a18f-143b0e46e43e",
+    "path" : "\/Users\/USER\/Downloads\/*\/Electron.app\/Contents\/Frameworks\/Electron Framework.framework\/Versions\/A\/Electron Framework",
+    "name" : "Electron Framework",
+    "CFBundleVersion" : "28.3.3"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4495638528,
+    "size" : 442368,
+    "uuid" : "71febccd-d9dc-3599-9971-2b3407c588a8",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703644696576,
+    "size" : 49152,
+    "uuid" : "b5454e27-e8c7-3fdb-b77f-714f1e82e70b",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703644794880,
+    "size" : 40960,
+    "uuid" : "a8a33774-6d44-35e9-ad2a-bad9e4d5192a",
+    "path" : "\/usr\/lib\/system\/libsystem_platform.dylib",
+    "name" : "libsystem_platform.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 5900181504,
+    "size" : 92635136,
+    "uuid" : "c0d64616-6e35-3517-a971-47dc343bb97f",
+    "path" : "\/Users\/USER\/Downloads\/*\/lancedb.darwin-x64.node",
+    "name" : "lancedb.darwin-x64.node"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4327706624,
+    "size" : 32768,
+    "uuid" : "21fe384c-8fbc-38ba-ba62-29b60297aea6",
+    "path" : "\/Users\/USER\/Downloads\/*\/fsevents.node",
+    "name" : "fsevents.node"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703660199936,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.Foundation",
+    "size" : 3919872,
+    "uuid" : "e22e60bb-ab77-3120-862f-92fa74feffcf",
+    "path" : "\/System\/Library\/Frameworks\/Foundation.framework\/Versions\/C\/Foundation",
+    "name" : "Foundation",
+    "CFBundleVersion" : "1866"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703642730496,
+    "size" : 180224,
+    "uuid" : "47042acd-a337-322a-8db7-ecd59cc60d92",
+    "path" : "\/usr\/lib\/system\/libsystem_malloc.dylib",
+    "name" : "libsystem_malloc.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 9932111872,
+    "size" : 15941632,
+    "uuid" : "2831b413-21eb-3b2b-934e-3a57627a4c2d",
+    "path" : "\/Users\/USER\/Downloads\/*\/libonnxruntime.1.14.0.dylib",
+    "name" : "libonnxruntime.1.14.0.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4488957952,
+    "size" : 114688,
+    "uuid" : "16e5cf9b-9b25-3573-b8d0-09e31471143b",
+    "path" : "\/Users\/USER\/Downloads\/*\/onnxruntime_binding.node",
+    "name" : "onnxruntime_binding.node"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703644012544,
+    "size" : 364544,
+    "uuid" : "e67ac91f-f1dc-30ec-84f3-83f5bdad3434",
+    "path" : "\/usr\/lib\/libc++.1.dylib",
+    "name" : "libc++.1.dylib"
+  }
+],
+  "sharedCache" : {
+  "base" : 140703641440256,
+  "size" : 19331678208,
+  "uuid" : "73669942-bd8a-3e40-951f-7fbe07b51cb8"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=1.4G resident=0K(0%) swapped_out_or_unallocated=1.4G(100%)\nWritable regions: Total=3.7G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=3.7G(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nAccelerate framework               128K        1 \nActivity Tracing                   256K        1 \nCG backing stores                 2160K        4 \nCG image                            72K        4 \nColorSync                          212K       24 \nCoreAnimation                      100K        8 \nCoreGraphics                         4K        1 \nCoreUI image data                 1320K        8 \nDispatch continuations            32.0M        1 \nFoundation                          48K        2 \nIOKit                             7940K        1 \nKernel Alloc Once                    8K        1 \nMALLOC                            40.2M       25 \nMALLOC guard page                   32K        8 \nMach message                        24K        3 \nMemory Tag 253                    31.3G     2498 \nMemory Tag 253 (reserved)        740.1M        4         reserved VM address space (unallocated)\nMemory Tag 255                     1.1T      953 \nMemory Tag 255 (reserved)          320K        5         reserved VM address space (unallocated)\nObjC additional data                15K        1 \nSTACK GUARD                       56.2M       43 \nStack                            262.9M       46 \nVM_ALLOCATE                       12.2M       28 \n__CTF                               756        1 \n__DATA                            42.5M      550 \n__DATA_CONST                      36.9M      357 \n__DATA_DIRTY                      1662K      224 \n__FONT_DATA                          4K        1 \n__LINKEDIT                       657.6M       20 \n__TEXT                           777.8M      561 \n__UNICODE                          592K        1 \ndyld private memory               1024K        3 \nmapped file                      248.4M       38 \nshared memory                      780K       18 \n===========                     =======  ======= \nTOTAL                              1.1T     5444 \nTOTAL, minus reserved VM space     1.1T     5444 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+
+  }
+},
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "607844aa04477260f58a8077",
+      "factorPackIds" : {
+        "SIRI_MORPHUN_ASSETS" : "6103050cbfe6dc472e1c982a"
+      },
+      "deploymentId" : 240000066
+    },
+    {
+      "rolloutId" : "60186475825c62000ccf5450",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000083
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}
+
+Model: MacBookPro14,1, BootROM 451.140.1.0.0, 2 processors, Dual-Core Intel Core i5, 2.3 GHz, 8 GB, SMC 2.43f11
+Graphics: Intel Iris Plus Graphics 640, Intel Iris Plus Graphics 640, Built-In
+Display: Color LCD, 2560 x 1600 Retina, Main, MirrorOff, Online
+Memory Module: BANK 0/DIMM0, 4 GB, LPDDR3, 2133 MHz, 0x802C, 0x4D5435324C3531324D3332443250462D3039
+Memory Module: BANK 1/DIMM0, 4 GB, LPDDR3, 2133 MHz, 0x802C, 0x4D5435324C3531324D3332443250462D3039
+AirPort: spairport_wireless_card_type_wifi (0x14E4, 0x170), Broadcom BCM43xx 1.0 (7.77.111.1 AirPortDriverBrcmNIC-1710.4)
+AirPort: 
+Bluetooth: Version (null), 0 services, 0 devices, 0 incoming serial ports
+Network Service: Wi-Fi, AirPort, en0
+USB Device: USB30Bus
+Thunderbolt Bus: MacBook Pro, Apple Inc., 41.5

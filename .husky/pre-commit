@@ -1,0 +1,4 @@
+npm run security
+
+# 自动更新开发日志并添加到暂存区
+node scripts/update-changelog.js "$COMMIT_MSG"

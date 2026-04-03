@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenClaw 控制台</title>
+    <style>
+      :root { color-scheme: light; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: #f8fafc; color: #0f172a; }
+      .wrap { padding: 16px; }
+      .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .title { font-weight: 800; font-size: 14px; }
+      .hint { font-size: 11px; color: #64748b; margin-top: 4px; }
+      .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px; margin-top: 12px; }
+      button { cursor: pointer; border-radius: 10px; border: 1px solid #e2e8f0; background: #fff; padding: 8px 10px; font-weight: 800; font-size: 11px; color: #0f172a; }
+      button.primary { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+      button.warn { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+      button:disabled { opacity: .5; cursor: not-allowed; }
+      pre { margin: 0; white-space: pre-wrap; word-break: break-word; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 10px; color: #0f172a; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+      .label { font-weight: 900; font-size: 10px; color: #64748b; margin-bottom: 6px; }
+      .pill { display:inline-flex; align-items:center; gap:6px; padding: 4px 8px; border-radius: 999px; background:#eef2ff; color:#3730a3; font-weight:900; font-size:10px; border:1px solid #e0e7ff; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="row" style="justify-content:space-between">
+        <div>
+          <div class="title">OpenClaw 控制台</div>
+          <div class="hint">该页面通过 NGO Planner 暴露的受控接口读取状态与日志，不直接展示任何 token。</div>
+        </div>
+        <div class="row">
+          <span id="statusPill" class="pill">加载中…</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <button id="btnRefresh" class="primary">刷新状态</button>
+          <button id="btnEnsure">确保运行</button>
+          <button id="btnSyncSkill">同步技能</button>
+          <button id="btnHealth">健康检查</button>
+          <button id="btnDashWindow">打开官方 Dashboard</button>
+          <button id="btnNative">内嵌预览</button>
+        </div>
+        <div class="hint">健康检查会让 OpenClaw agent 只调用 /health 并输出 capabilities。</div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="label">OpenClaw 状态</div>
+          <pre id="statusBox">（加载中）</pre>
+        </div>
+        <div class="card">
+          <div class="label">最近一次执行</div>
+          <pre id="lastRunBox">（暂无）</pre>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="label">Gateway 日志（tail）</div>
+          <pre id="gwLog">（加载中）</pre>
+        </div>
+        <div class="card">
+          <div class="label">Agent 日志（tail）</div>
+          <pre id="agLog">（加载中）</pre>
+        </div>
+      </div>
+
+      <div class="card" id="nativeWrap" style="display:none">
+        <div class="label">OpenClaw 官方 Dashboard</div>
+        <div class="hint" style="margin:6px 0 10px">
+          内嵌预览用于快速查看界面是否可用；完整交互（登录/会话/任务列表）推荐使用“打开官方 Dashboard”，并且会自动复制 token 并尝试预置登录信息。
+        </div>
+        <div class="row" style="margin-bottom:10px">
+          <button id="btnNativeReload">刷新</button>
+        </div>
+        <iframe id="nativeFrame" style="width:100%;height:70vh;border:1px solid #e2e8f0;border-radius:14px;background:#fff"></iframe>
+      </div>
+    </div>
+
+    <script>
+      const rpc = (() => {
+        const pending = new Map();
+        let seq = 0;
+        const sp = new URLSearchParams(location.search);
+        const session = sp.get('session') || '';
+        const call = (method, params) =>
+          new Promise((resolve, reject) => {
+            const requestId = `rpc_${Date.now()}_${seq++}`;
+            pending.set(requestId, { resolve, reject });
+            window.parent.postMessage({ kind: 'ngo-plugin-rpc', session, requestId, method, params: params || {} }, '*');
+            setTimeout(() => {
+              const p = pending.get(requestId);
+              if (!p) return;
+              pending.delete(requestId);
+              reject(new Error('timeout'));
+            }, 15000);
+          });
+        window.addEventListener('message', (ev) => {
+          const msg = ev.data || {};
+          if (!msg || msg.kind !== 'ngo-plugin-rpc-res') return;
+          if (msg.session !== session) return;
+          const p = pending.get(msg.requestId);
+          if (!p) return;
+          pending.delete(msg.requestId);
+          if (msg.success) p.resolve(msg.result);
+          else p.reject(new Error(msg.error || 'error'));
+        });
+        return { call };
+      })();
+
+      const el = (id) => document.getElementById(id);
+      const statusBox = el('statusBox');
+      const lastRunBox = el('lastRunBox');
+      const gwLog = el('gwLog');
+      const agLog = el('agLog');
+      const statusPill = el('statusPill');
+      const btnRefresh = el('btnRefresh');
+      const btnEnsure = el('btnEnsure');
+      const btnSyncSkill = el('btnSyncSkill');
+      const btnHealth = el('btnHealth');
+      const btnDashWindow = el('btnDashWindow');
+      const btnNative = el('btnNative');
+      const btnNativeReload = el('btnNativeReload');
+      const nativeWrap = el('nativeWrap');
+      const nativeFrame = el('nativeFrame');
+
+      let busy = false;
+      let pollTimer = null;
+      let lastStatus = null;
+
+      const setBusy = (v) => {
+        busy = !!v;
+        btnRefresh.disabled = busy;
+        btnEnsure.disabled = busy;
+        btnSyncSkill.disabled = busy;
+        btnHealth.disabled = busy;
+      };
+
+      const redact = (s) => String(s || '')
+        .replace(/Bearer\\s+[A-Za-z0-9._-]+/g, 'Bearer [REDACTED]')
+        .replace(/\\b[a-f0-9]{64}\\b/gi, '[REDACTED]')
+        .replace(/NGOPLANNER_BRIDGE_TOKEN\\s*[:=]\\s*\\S+/gi, 'NGOPLANNER_BRIDGE_TOKEN=[REDACTED]');
+
+      const renderStatus = (st) => {
+        lastStatus = st || null;
+        statusBox.textContent = JSON.stringify(st || {}, null, 2);
+        const gw = st && st.gateway ? st.gateway : null;
+        const running = !!(gw && gw.running);
+        statusPill.textContent = running ? 'Gateway：运行中' : 'Gateway：未运行';
+        statusPill.style.background = running ? '#ecfdf5' : '#fff7ed';
+        statusPill.style.borderColor = running ? '#a7f3d0' : '#fed7aa';
+        statusPill.style.color = running ? '#065f46' : '#9a3412';
+      };
+
+      const refresh = async () => {
+        try {
+          const st = await rpc.call('openclaw.getStatus');
+          renderStatus(st);
+        } catch (e) {}
+        try {
+          const gw = await rpc.call('openclaw.getGatewayLogTail', { lines: 200 });
+          gwLog.textContent = redact(gw && gw.text ? gw.text : '（暂无）');
+        } catch (e) {}
+        try {
+          const ag = await rpc.call('openclaw.getAgentLogTail', { lines: 200 });
+          agLog.textContent = redact(ag && ag.text ? ag.text : '（暂无）');
+        } catch (e) {}
+      };
+
+      btnRefresh.addEventListener('click', async () => {
+        setBusy(true);
+        try { await refresh(); } finally { setBusy(false); }
+      });
+
+      btnEnsure.addEventListener('click', async () => {
+        setBusy(true);
+        try {
+          await rpc.call('openclaw.ensureRunning');
+          await refresh();
+        } catch (e) {
+          alert(`❌ 确保运行失败：${e.message || 'Unknown error'}`);
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      btnSyncSkill.addEventListener('click', async () => {
+        setBusy(true);
+        try {
+          await rpc.call('openclaw.syncBridgeSkill');
+          await refresh();
+          alert('✅ 已同步技能（若 OpenClaw 会话已启动，可能需要重启会话才会加载新技能快照）');
+        } catch (e) {
+          alert(`❌ 同步失败：${e.message || 'Unknown error'}`);
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      btnHealth.addEventListener('click', async () => {
+        setBusy(true);
+        try {
+          await rpc.call('openclaw.ensureRunning');
+          const res = await rpc.call('openclaw.runAgentMessage', { message: '请仅调用 ${NGOPLANNER_BRIDGE_URL}/health 并输出 capabilities（不要输出 token）。' });
+          lastRunBox.textContent = redact((res && (res.stdout || res.stderr || res.error)) ? (res.stdout || res.stderr || res.error) : '（无输出）');
+          await refresh();
+        } catch (e) {
+          alert(`❌ 健康检查失败：${e.message || 'Unknown error'}`);
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      const ensureNativeFrame = async (forceReload) => {
+        if (!nativeFrame) return;
+        if (!lastStatus?.gateway?.running) {
+          await rpc.call('openclaw.ensureRunning');
+          await refresh();
+        }
+        const port = lastStatus?.gateway?.port || 0;
+        if (!port) return;
+        let token = '';
+        try { token = await rpc.call('openclaw.getGatewayToken'); } catch (e) { token = ''; }
+        const url = (() => {
+          try {
+            const u = new URL(`http://127.0.0.1:${port}/`);
+            if (token) {
+              u.searchParams.set('auth', token);
+              u.searchParams.set('token', token);
+            }
+            return u.toString();
+          } catch (e) {
+            return `http://127.0.0.1:${port}/`;
+          }
+        })();
+        if (forceReload || !String(nativeFrame.src || '').includes(`127.0.0.1:${port}`)) {
+          nativeFrame.src = url;
+        }
+      };
+
+      btnDashWindow.addEventListener('click', async () => {
+        setBusy(true);
+        try {
+          const r = await rpc.call('openclaw.openDashboard', {});
+          if (!r?.success) alert('打开失败：OpenClaw Gateway 未运行或未就绪');
+        } catch (e) {
+          alert(`打开失败：${e.message || 'Unknown error'}`);
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      btnNative.addEventListener('click', async () => {
+        if (!nativeWrap) return;
+        const show = nativeWrap.style.display === 'none' || !nativeWrap.style.display;
+        nativeWrap.style.display = show ? 'block' : 'none';
+        if (show) {
+          setBusy(true);
+          try { await ensureNativeFrame(false); } finally { setBusy(false); }
+        }
+      });
+
+      btnNativeReload.addEventListener('click', async () => {
+        setBusy(true);
+        try { await ensureNativeFrame(true); } finally { setBusy(false); }
+      });
+
+      const startPoll = () => {
+        if (pollTimer) return;
+        pollTimer = setInterval(refresh, 2000);
+      };
+
+      window.addEventListener('focus', () => { refresh(); startPoll(); });
+      window.addEventListener('blur', () => { try { clearInterval(pollTimer); } catch (e) {} pollTimer = null; });
+
+      refresh();
+      startPoll();
+    </script>
+  </body>
+</html>

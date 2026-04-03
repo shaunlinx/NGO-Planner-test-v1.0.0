@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-05T19:14:28.617Z",
+  "mode": "agent_first",
+  "humanFallback": "critical_only",
+  "agentReview": {
+    "autoApproveRisk": [
+      "low"
+    ],
+    "autoRejectWhen": [
+      "coverage_mismatch_detected"
+    ],
+    "requireHumanWhen": [
+      "high_risk_destructive",
+      "new_high_risk_capability"
+    ]
+  },
+  "reviewInput": {
+    "coveragePercent": 100,
+    "missingInCatalog": [],
+    "missingInRuntime": [],
+    "highRiskCapabilities": [
+      "artifacts_write",
+      "events_delete",
+      "events_upsert",
+      "fs_write",
+      "kb_mount_remove",
+      "kb_query",
+      "leads_delete",
+      "leads_upsert",
+      "net_fetch",
+      "org_set",
+      "project_intel_delete",
+      "project_intel_items_update",
+      "project_intel_run",
+      "projects_delete",
+      "projects_patch",
+      "schedules_delete",
+      "schedules_upsert",
+      "selection_set",
+      "settings_set",
+      "team_delete",
+      "team_upsert"
+    ]
+  },
+  "recommendation": "allow_agent_review"
+}

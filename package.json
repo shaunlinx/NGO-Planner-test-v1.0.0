@@ -1,0 +1,193 @@
+{
+  "name": "ngo-planner-desktop",
+  "version": "2.3.1",
+  "description": "专为公益人打造的 AI 策划与项目台账工作台",
+  "main": "electron/main.js",
+  "type": "commonjs",
+  "homepage": "./",
+  "author": "NGO Planner Team",
+  "build": {
+    "appId": "com.ngoplanner.desktop",
+    "productName": "公益人年历",
+    "copyright": "Copyright © 2025 NGO Planner",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "public/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    },
+    "asar": true,
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/models",
+        "to": "models"
+      },
+      {
+        "from": "resources/pdfjs",
+        "to": "pdfjs"
+      },
+      {
+        "from": "resources/tessdata",
+        "to": "tessdata"
+      },
+      {
+        "from": "resources/plugins",
+        "to": "plugins",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/claude_code_runtime",
+        "to": "claude_code_runtime",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/openclaw_runtime",
+        "to": "openclaw_runtime",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/official_skills",
+        "to": "official_skills",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "electron/python",
+        "to": "python",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "publish": null
+  },
+  "scripts": {
+    "dev": "vite --port 5173 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist dist_electron node_modules package-lock.json",
+    "postinstall": "electron-builder install-app-deps",
+    "electron:dev": "node scripts/electron-dev.js",
+    "dist": "npm run build && DYLD_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_FALLBACK_LIBRARY_PATH electron-builder --mac",
+    "dist:arm": "npm run build && DYLD_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_FALLBACK_LIBRARY_PATH electron-builder --mac --arm64",
+    "dist:x64": "npm run build && DYLD_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/gettext/lib:/usr/local/opt/gettext/lib:$DYLD_FALLBACK_LIBRARY_PATH electron-builder --mac --x64",
+    "build:clean": "bash scripts/clean-build.sh",
+    "nav:new": "node scripts/feature-nav.js new",
+    "nav:reindex": "node scripts/feature-nav.js reindex",
+    "security": "bash scripts/security-check.sh",
+    "security:scan": "node scripts/security-scan.js",
+    "security:audit": "npm audit",
+    "security:fix": "npm audit fix",
+    "security:all": "npm run security:scan && npm run security:audit",
+    "maintenance": "node scripts/maintenance.js",
+    "sync": "bash scripts/sync-github.sh",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@google/genai": "latest",
+    "@lancedb/lancedb": "0.22.3",
+    "@lancedb/lancedb-darwin-x64": "0.22.3",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/dagre": "^0.7.53",
+    "@types/dompurify": "^3.0.5",
+    "@xenova/transformers": "^2.17.2",
+    "@xyflow/react": "^12.10.0",
+    "apache-arrow": "^18.0.0",
+    "archiver": "^7.0.1",
+    "archiver-zip-encrypted": "^2.0.0",
+    "axios": "^1.13.4",
+    "better-sqlite3": "^11.3.0",
+    "canvas-confetti": "^1.9.4",
+    "chokidar": "^5.0.0",
+    "dagre": "^0.8.5",
+    "dompurify": "^3.3.1",
+    "exceljs": "^4.4.0",
+    "framer-motion": "^12.26.2",
+    "html-to-docx": "^1.8.0",
+    "jszip": "^3.10.1",
+    "konva": "^10.2.0",
+    "lucide-react": "^0.562.0",
+    "lunar-javascript": "^1.7.7",
+    "mammoth": "^1.11.0",
+    "markdown-it": "^14.1.0",
+    "node-pty": "^1.0.0",
+    "office-text-extractor": "^4.0.0",
+    "openai": "^6.15.0",
+    "p-queue": "^9.1.0",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^5.4.296",
+    "pptxgenjs": "^3.12.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-konva": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-pdf": "^10.3.0",
+    "react-virtualized-auto-sizer": "^2.0.2",
+    "react-window": "^2.2.5",
+    "remark-gfm": "^4.0.1",
+    "tesseract.js": "^7.0.0",
+    "uuid": "^9.0.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.3",
+    "@tailwindcss/typography": "^0.5.19",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.23",
+    "concurrently": "^8.2.2",
+    "electron": "^34.0.0",
+    "electron-builder": "^26.6.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.6",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.2.2",
+    "vite": "^6.0.5",
+    "wait-on": "^7.2.0"
+  }
+}

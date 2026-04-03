@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OpenClaw 控制台</title>
+    <style>
+      :root { color-scheme: light; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: #f8fafc; color: #0f172a; }
+      .wrap { padding: 16px; max-width: 1100px; margin: 0 auto; }
+      .row { display: flex; gap: 12px; flex-wrap: wrap; }
+      .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 14px; flex: 1; min-width: 320px; }
+      .title { font-weight: 900; font-size: 14px; }
+      .sub { margin-top: 4px; font-size: 11px; color: #64748b; }
+      .btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+      button { border: 1px solid #e2e8f0; background: #fff; color: #0f172a; border-radius: 12px; padding: 8px 10px; font-weight: 800; font-size: 12px; cursor: pointer; }
+      button.primary { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+      button.danger { background: #fee2e2; border-color: #fecaca; color: #b91c1c; }
+      button:disabled { opacity: .6; cursor: not-allowed; }
+      pre { background: #0b1220; color: #e2e8f0; border-radius: 12px; padding: 10px; font-size: 11px; line-height: 1.4; overflow: auto; max-height: 240px; }
+      .kv { margin-top: 10px; display: grid; grid-template-columns: 120px 1fr; gap: 6px 10px; font-size: 12px; }
+      .k { color: #64748b; font-weight: 800; }
+      .v { font-weight: 800; color: #0f172a; word-break: break-word; }
+      .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 900; border: 1px solid #e2e8f0; background: #f8fafc; color: #334155; }
+      .ok { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+      .bad { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="row">
+        <div class="card">
+          <div class="title">OpenClaw 控制台</div>
+          <div class="sub">此页面通过与 NGO Planner 宿主的 postMessage RPC 通信，不直接读取 Token。</div>
+          <div class="btns">
+            <button id="btnRefresh" class="primary">刷新状态</button>
+            <button id="btnEnsure">确保运行</button>
+            <button id="btnSync">同步技能</button>
+            <button id="btnToggle">启用/停用</button>
+            <button id="btnRotate" class="danger">重置 Bridge Token</button>
+            <button id="btnNative">内嵌预览</button>
+            <button id="btnDashWindow">打开官方 Dashboard</button>
+          </div>
+          <div class="kv">
+            <div class="k">集成状态</div><div class="v" id="vEnabled">-</div>
+            <div class="k">Gateway</div><div class="v" id="vGateway">-</div>
+            <div class="k">Bridge</div><div class="v" id="vBridge">-</div>
+            <div class="k">可执行文件</div><div class="v mono" id="vExe">-</div>
+            <div class="k">OpenClaw Home</div><div class="v mono" id="vHome">-</div>
+            <div class="k">最近错误</div><div class="v" id="vErr">-</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="title">日志（尾部）</div>
+          <div class="sub">用于快速定位 Gateway/Agent 是否在真实执行工具。</div>
+          <div class="btns">
+            <button id="btnLogs">刷新日志</button>
+            <span class="pill" id="pillGw">Gateway</span>
+            <span class="pill" id="pillAg">Agent</span>
+          </div>
+          <div class="sub" style="margin-top:10px;">Gateway</div>
+          <pre id="gwLog" class="mono">(暂无)</pre>
+          <div class="sub" style="margin-top:10px;">Agent</div>
+          <pre id="agLog" class="mono">(暂无)</pre>
+        </div>
+      </div>
+      <div class="card" id="nativeWrap" style="display:none">
+        <div class="title">OpenClaw 官方 Dashboard</div>
+        <div class="sub">内嵌预览用于快速查看界面是否可用；完整交互推荐使用“打开官方 Dashboard”。</div>
+        <div class="btns">
+          <button id="btnNativeReload">刷新</button>
+        </div>
+        <iframe id="nativeFrame" style="width:100%;height:70vh;border:1px solid #e2e8f0;border-radius:14px;background:#fff"></iframe>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

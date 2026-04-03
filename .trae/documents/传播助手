@@ -1,0 +1,57 @@
+# Social Media Assistant Enhancement Plan (Phase 1 & 2)
+
+Based on your detailed requirements, we will upgrade the "Social Assistant" from a simple scraper to a robust "Social Media Intelligence Center". We will adopt the proposed architecture: **Local SQLite Database + Electron Service + React Frontend**.
+
+## 1. Architecture Upgrade
+
+### **Backend (Data & Logic)**
+*   **Database Schema (`electron/databaseManager.js`)**:
+    *   Add tables to store structured data persistently, enabling the "Knowledge Base" features.
+    *   `social_accounts`: Store platform credentials (cookies/headers encrypted).
+    *   `social_tasks`: Manage collection tasks (Target URL, Type, Schedule, Status).
+    *   `social_items`: Store collected data (Notes, Comments, Stats) to support the "Unified Data View".
+*   **Service Layer (`electron/services/social/SocialMediaManager.js`)**:
+    *   **Task Scheduler**: Since no external lib exists, we will implement a robust `setInterval` based scheduler in the main process to handle "Daily 9 AM" or "Periodic" tasks.
+    *   **Enhanced Scraper**:
+        *   **Keyword Search**: Add capability to scrape search result pages, not just profiles.
+        *   **Incremental Logic**: Check `social_items` before saving to avoid duplicates.
+        *   **Detail Extraction**: Improve script to extract comments and rich metadata.
+
+### **Frontend (UI/UX)**
+*   **SocialHub Component (`components/SocialMedia/SocialHub.tsx`)**:
+    *   Refactor into a tabbed "Workstation" layout:
+        1.  **Dashboard**: Overview of tasks and recent data.
+        2.  **Task Manager**: Configure Monitoring/Search tasks.
+        3.  **Data Library**: A table view of all collected notes (replacing the temporary list).
+        4.  **Content Studio**: Editor for creating new posts referencing collected data.
+        5.  **Accounts**: Manage platform connections.
+
+## 2. Implementation Steps
+
+### **Phase 1: Foundation (Data & Task Engine)**
+1.  **Database Upgrade**:
+    *   Modify `databaseManager.js` to create `social_accounts`, `social_tasks`, `social_items` tables.
+2.  **Backend Service**:
+    *   Update `SocialMediaManager` to support CRUD operations for tasks and items.
+    *   Implement the `Scheduler` class to run tasks in the background.
+
+### **Phase 2: Enhanced Collection (The "Powerful" Part)**
+1.  **Scraper Logic Update**:
+    *   Add `scrapeSearch(keyword)` method.
+    *   Enhance `scrapeProfile(url)` to support deep scrolling and detail extraction.
+2.  **Frontend - Task & Data UI**:
+    *   Build the **Task Configuration Form** (Target, Frequency, Depth).
+    *   Build the **Data Library Table** (Sortable, Searchable, Export to Markdown).
+
+### **Phase 3: Content & Publishing (Future - Brief Mention)**
+*   We will lay the groundwork (Account storage) now, but full "Multi-platform Publishing" will be a subsequent step once data collection is stable.
+
+## 3. User Workflow Changes
+*   **Old**: Paste URL -> Click Scrape -> Wait -> See temp list.
+*   **New**:
+    1.  **Setup**: Add a "Monitor Task" for a competitor or "Search Task" for a topic.
+    2.  **Automate**: The system runs in the background (while app is open).
+    3.  **Insight**: Go to "Data Library" to browse/filter 1000+ collected notes.
+    4.  **Create**: Select a high-performing note -> "Reference to Create" -> AI writes a draft.
+
+Shall we proceed with **Phase 1 (Database & Backend)**?

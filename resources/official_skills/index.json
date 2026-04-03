@@ -1,0 +1,53 @@
+{
+  "version": "2026-03-01",
+  "skills": [
+    {
+      "id": "ngo-planner-role-designer",
+      "name": "NGO Planner · 作图机器人",
+      "description": "群内作图迭代：生成/修改/定稿/归档",
+      "risk": "yellow",
+      "permissions": { "network": "allowlist", "fs": "workspace_only", "write": "approval", "publish": "never" },
+      "capabilities": ["design.generate", "design.edit", "asset.archive"]
+    },
+    {
+      "id": "ngo-planner-role-researcher",
+      "name": "NGO Planner · 调研机器人",
+      "description": "调研与引用：检索/核查/出处/终稿草案",
+      "risk": "yellow",
+      "permissions": { "network": "allowlist", "fs": "workspace_only", "write": "approval", "publish": "never" },
+      "capabilities": ["research.web", "cite.format", "draft.write"]
+    },
+    {
+      "id": "ngo-planner-role-operator",
+      "name": "NGO Planner · 新媒体运营机器人",
+      "description": "排版与预览：输出预览、收集审核意见、发布需确认",
+      "risk": "red",
+      "permissions": { "network": "allowlist", "fs": "workspace_only", "write": "approval", "publish": "confirm" },
+      "capabilities": ["layout.preview", "review.collect", "publish.request"]
+    },
+    {
+      "id": "ngo-planner-role-scribe",
+      "name": "NGO Planner · 记录机器人",
+      "description": "群讨论记录与知识库沉淀：归档、补充、定期综述",
+      "risk": "yellow",
+      "permissions": { "network": "deny", "fs": "kb_mounts_only", "write": "approval", "publish": "never" },
+      "capabilities": ["thread.capture", "kb.write", "kb.query", "report.periodic"]
+    },
+    {
+      "id": "ngo-planner-role-finance",
+      "name": "NGO Planner · 财务机器人",
+      "description": "发票/报销登记与汇总：高敏感数据，提审需确认",
+      "risk": "red",
+      "permissions": { "network": "deny", "fs": "workspace_only", "write": "approval", "publish": "never" },
+      "capabilities": ["invoice.ocr", "expense.upsert", "expense.report", "approval.request"]
+    },
+    {
+      "id": "ngo-planner-role-secretary",
+      "name": "NGO Planner · 秘书机器人",
+      "description": "会议/活动安排：解析时间、冲突检测、创建日程与提醒",
+      "risk": "yellow",
+      "permissions": { "network": "deny", "fs": "workspace_only", "write": "approval", "publish": "never" },
+      "capabilities": ["time.parse", "calendar.conflict_check", "calendar.create", "notify.schedule"]
+    }
+  ]
+}
